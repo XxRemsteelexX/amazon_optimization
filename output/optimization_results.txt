@@ -1,11 +1,10 @@
 Amazon Distribution Optimization Results
-Generated: 2025-06-05 10:26:53
 ============================================================
 
 OPTIMAL SOLUTION SUMMARY:
-Optimal Cost: $199,476.25
+Optimal Cost: $186,435.25
 Total Cargo: 133,747 tons
-Cost per Ton: $1.49
+Cost per Ton: $1.39
 
 DISTRIBUTION STRATEGY:
 Direct Distribution: 67.5%
