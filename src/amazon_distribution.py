@@ -27,8 +27,8 @@ def main():
     """
     # ---- 1. Load Data ----
     try:
-        sites_df = pd.read_excel('amazon_sites_demand_capacity.xlsx')
-        costs_df = pd.read_excel('amazon_distribution_costs_full.xlsx')
+        sites_df = pd.read_excel('../data/amazon_sites_demand_capacity.xlsx')
+        costs_df = pd.read_excel('../data/amazon_distribution_costs_full.xlsx')
         print("Data loaded successfully.")
     except FileNotFoundError as e:
         print("ERROR: Required data file not found.", e)
@@ -247,7 +247,7 @@ def main():
             print(f"  {j} to {k}: {value:,.0f} tons")
 
         try:
-            output_dir = 'output'
+            output_dir = '../results'
             if not os.path.exists(output_dir):
                 os.makedirs(output_dir)
 
