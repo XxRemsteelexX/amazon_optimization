@@ -1,7 +1,6 @@
 # Amazon Distribution Network Optimization
 
 **Author:** Glenn Dalbey  
-**Course:** D605 Advanced Analytics - Task 3  
 **Institution:** Western Governors University  
 
 A comprehensive linear programming solution to optimize Amazon's multi-tier cargo distribution network, achieving **25.4% cost reduction** through strategic route optimization and capacity management.
@@ -309,7 +308,6 @@ amazon_optimization/
 
 **Contact**: Glenn Dalbey  
 **Institution**: Western Governors University  
-**Course**: D605 Advanced Analytics  
 **Year**: 2024
 
 **License**: MIT License - see LICENSE file for details
