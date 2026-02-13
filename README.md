@@ -60,7 +60,7 @@ Amazon operates a complex three-tier distribution network:
 
 ### Objective Function
 ```
-Minimize: Σ(c_ij * x_ij) + Σ(c_ik * y_ik) + Σ(c_jk * z_jk)
+Minimize: SUM(c_ij * x_ij) + SUM(c_ik * y_ik) + SUM(c_jk * z_jk)
 ```
 Where c represents unit transportation costs per ton.
 
@@ -68,27 +68,27 @@ Where c represents unit transportation costs per ton.
 
 1. **Hub Capacity Constraints**:
    ```
-   Σ(x_ij) + Σ(y_ik) ≤ Hub_Capacity_i  ∀ hubs i
+   SUM(x_ij) + SUM(y_ik) <= Hub_Capacity_i  for all hubs i
    ```
 
 2. **Focus City Capacity Constraints**:
    ```
-   Σ(x_ij) ≤ Focus_Capacity_j  ∀ focus cities j
+   SUM(x_ij) <= Focus_Capacity_j  for all focus cities j
    ```
 
 3. **Flow Balance at Focus Cities**:
    ```
-   Σ(x_ij) = Σ(z_jk)  ∀ focus cities j
+   SUM(x_ij) = SUM(z_jk)  for all focus cities j
    ```
 
 4. **Demand Satisfaction**:
    ```
-   Σ(y_ik) + Σ(z_jk) = Demand_k  ∀ distribution centers k
+   SUM(y_ik) + SUM(z_jk) = Demand_k  for all distribution centers k
    ```
 
 5. **Non-negativity**:
    ```
-   x_ij, y_ik, z_jk ≥ 0
+   x_ij, y_ik, z_jk >= 0
    ```
 
 ## Network Architecture
@@ -220,26 +220,26 @@ The notebook includes:
 
 ```
 amazon_optimization/
-├── README.md                    # Project documentation
-├── requirements.txt            # Python dependencies
-├── .gitignore                  # Git ignore rules
-│
-├── data/                       # Input data files
-│   ├── amazon_sites_demand_capacity.xlsx
-│   └── amazon_distribution_costs_full.xlsx
-│
-├── src/                        # Source code
-│   └── amazon_distribution.py  # Main optimization script
-│
-├── notebooks/                  # Jupyter notebooks
-│   ├── amazondist.ipynb       # Interactive analysis
-│   └── amazondist.html        # Notebook export
-│
-├── results/                    # Output files
-│   └── optimization_results.txt # Optimization results
-│
-└── docs/                       # Documentation
-    └── (future documentation)
++-- README.md                    # Project documentation
++-- requirements.txt            # Python dependencies
++-- .gitignore                  # Git ignore rules
+|
++-- data/                       # Input data files
+|   +-- amazon_sites_demand_capacity.xlsx
+|   +-- amazon_distribution_costs_full.xlsx
+|
++-- src/                        # Source code
+|   +-- amazon_distribution.py  # Main optimization script
+|
++-- notebooks/                  # Jupyter notebooks
+|   +-- amazondist.ipynb       # Interactive analysis
+|   +-- amazondist.html        # Notebook export
+|
++-- results/                    # Output files
+|   +-- optimization_results.txt # Optimization results
+|
++-- docs/                       # Documentation
+    +-- (future documentation)
 ```
 
 ## Technical Implementation
@@ -260,7 +260,7 @@ amazon_optimization/
 
 ### Algorithm Performance
 - **Convergence**: Guaranteed optimal solution for linear problems
-- **Computational Complexity**: O(n³) for CBC solver
+- **Computational Complexity**: O(n^3) for CBC solver
 - **Memory Usage**: <100MB for current network size
 - **Processing Speed**: Real-time optimization for operational decisions
 

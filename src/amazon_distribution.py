@@ -1,5 +1,3 @@
-
-
 """
 Amazon Distribution Network Optimization Solution
 
@@ -273,9 +271,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
 
 
 
